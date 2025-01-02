@@ -4,15 +4,11 @@ from parameters import  *
 
 def wait_for_spacebar():
     """
-    Waits for the user to press the space bar.
+    Waits for the user to press the space bar and clears residual events.
     """
-    # Create a Keyboard object
-    kb = keyboard.Keyboard()
-
-    # Wait for the space bar press
     while True:
-        keys = kb.getKeys(waitRelease=True)  # Wait for keys to be released
-        if 'space' in [key.name for key in keys]:  # Check if space was pressed
+        keys = event.getKeys()  # Check for keypresses
+        if 'space' in keys:  # Check if space was pressed
             break
 
 
@@ -71,8 +67,7 @@ def display_text(win, text, bold_indices=None, font_sizes=None, color_indices=No
         obj.draw()
     win.flip()
 
-
-from psychopy import visual, core, event
+from psychopy import visual, event
 
 from psychopy import visual, event, core
 
@@ -83,7 +78,7 @@ from psychopy import visual, event, core
 
 def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     """
-    Display text with a prompt box and warnings for invalid input, clearing old input when retrying.
+    Simulated input box using TextStim to display input and handle key presses manually.
 
     Parameters:
         win (visual.Window): The PsychoPy window object.
@@ -92,10 +87,7 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
         max_investment (int): Maximum allowed investment.
         font_size (float): Font size for the text and prompt (default: 0.1).
     """
-    # Clear any previous key presses
-    event.clearEvents()
-
-    # Create input prompt, editable text box, and warning text
+    # Create input prompt and warning text
     prompt_stim = visual.TextStim(
         win,
         text=prompt_text,
@@ -103,60 +95,62 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
         height=font_size,
         pos=(0, 0.2)  # Position above input box
     )
-    input_box = visual.TextBox2(
+    input_display = visual.TextStim(
         win,
-        text="",  # Start with an empty input
+        text="",  # Start with empty input
         color="white",
-        pos=(0, -0.1),  # Position below the prompt
-        size=(0.5, 0.1),  # Adjust box size
-        alignment="center",
-        editable=True,
-        letterHeight=0.09,  # Font size for input text
-        placeholder="",  # Remove default placeholder text
+        height=font_size,
+        pos=(0, -0.1)  # Position below the prompt
     )
     warning_stim = visual.TextStim(
         win,
         text="",  # Start with no warning
         color="red",
-        height=font_size * 0.8,  # Slightly smaller than main text
-        pos=(0, -0.3)  # Position below the input box
+        height=font_size * 0.8,
+        pos=(0, -0.3)  # Position below the input display
     )
 
     investment = None
+    input_text = ""
 
     while investment is None:
-        # Draw the main components
+        # Draw the components
         prompt_stim.draw()
-        input_box.draw()
+        input_display.text = input_text  # Update displayed text
+        input_display.draw()
         warning_stim.draw()
         win.flip()
 
+        # Get key presses
         keys = event.getKeys()
-        if "return" in keys:  # When Enter is pressed
-            try:
-                entered_value = int(input_box.text.strip())
-                if entered_value < min_investment:
-                    warning_stim.text = "Zła wartość: inwestycja poniżej minimum, spróbuj ponownie."
-                    input_box.text = ""  # Clear the previous input
-                elif entered_value > max_investment:
-                    warning_stim.text = "Zła wartość: inwestycja powyżej maksimum, spróbuj ponownie."
-                    input_box.text = ""  # Clear the previous input
+        for key in keys:
+            if key == "return":  # When Enter is pressed
+                if input_text == "":
+                    warning_stim.text = "Pole nie może być puste. Spróbuj ponownie."
                 else:
-                    investment = entered_value  # Valid input
-                    break
-            except ValueError:
-                warning_stim.text = "Nie podałeś właściwej wartości, spróbuj jeszcze raz."
-                input_box.text = ""  # Clear the previous input
-        elif "escape" in keys:  # Option to exit with Escape
-            core.quit()
+                    try:
+                        entered_value = int(input_text)
+                        if entered_value < min_investment:
+                            warning_stim.text = "Zła wartość: inwestycja poniżej minimum, spróbuj ponownie."
+                        elif entered_value > max_investment:
+                            warning_stim.text = "Zła wartość: inwestycja powyżej maksimum, spróbuj ponownie."
+                        else:
+                            investment = entered_value  # Valid input
+                            break
+                    except ValueError:
+                        warning_stim.text = "Nie podałeś właściwej wartości, spróbuj jeszcze raz."
+                input_text = ""  # Clear input after pressing Enter
+            elif key == "backspace":  # Handle backspace
+                input_text = input_text[:-1]  # Remove last character
+            elif key == "escape":  # Exit option
+                core.quit()
+            elif len(key) == 1:  # Append other keys (ignore special keys)
+                input_text += key
 
     # Clear the screen after valid input
     win.flip()
 
     return investment
-
-
-from psychopy import visual, core
 
 
 def tg_return(win, return_text, investment, multiplier, font_size=0.1):
@@ -204,6 +198,8 @@ def tg_return(win, return_text, investment, multiplier, font_size=0.1):
     return_stim.draw()
     investment_stim.draw()
     win.flip()
+
+    return return_value
 
 
 
