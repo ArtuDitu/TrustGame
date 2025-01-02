@@ -3,7 +3,7 @@ from psychopy import visual, core
 from psychopy.hardware import keyboard
 import os
 
-import pyxid2 as pyxid2
+#import pyxid2 as pyxid2
 #######
 
 
@@ -24,10 +24,15 @@ rs_duration = 1 # 180
 # number of trials
 TG_trials = 5
 
+###TG parameters
+min_investment_p = 1
+max_investment_p = 10
+
+
 directory = 'data'
 # Create a file with the participant number in its name
 tg_file_name = f"TG_{dyad_number}.csv"
-tg_file_path = os.path.join(directory, esm_file_name)
+tg_file_path = os.path.join(directory, tg_file_name)
 
 # Define window dimensions (update this for your setup or leave None for full-screen mode)
 window_width = 1920
@@ -50,3 +55,7 @@ win.mouseVisible = False
 ### texts
 
 welcome_text = 'Witamy\n\n Wciśnij spacje by kontynuować'
+instructions1 = 'Instrukcje'
+investment_text = 'Ilę chciałabyś/byś zainwestować?'
+return_text_p = 'Twój powiernik zwrócił dla Ciebie:'
+
