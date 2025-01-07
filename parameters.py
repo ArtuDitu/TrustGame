@@ -23,17 +23,7 @@ dyad_number = 666
 rs_duration = 1 # 180
 # number of trials
 TG_trials = 5
-mode='fair'
-if mode == "fair":
-    multiplier = 1.3
-    min_return = 1.0
-    max_return = 1.5
-elif mode == "unfair":
-    multiplier = 0.3
-    min_return = 0.0
-    max_return = 0.3
-else:
-    raise ValueError("Mode must be 'fair' or 'unfair'.")
+
 
 ###TG parameters
 min_investment_p = 1
@@ -48,7 +38,7 @@ tg_file_name = f"TG_{dyad_number}.csv"
 tg_file_path = os.path.join(directory, tg_file_name)
 
 # Define window dimensions (update this for your setup or leave None for full-screen mode)
-window_width = 1980
+window_width = 1960
 window_height = 1080
 
 

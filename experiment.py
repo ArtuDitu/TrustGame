@@ -14,9 +14,22 @@ wait_for_spacebar()
 display_text(win, instructions1)
 wait_for_spacebar()
 
+mode = 'fair'
+if mode == "fair":
+    multiplier = 1.3
+    min_return = 1.0
+    max_return = 1.5
+elif mode == "unfair":
+    multiplier = 0.3
+    min_return = 0.0
+    max_return = 0.3
+else:
+    raise ValueError("Mode must be 'fair' or 'unfair'.")
+
 # tg
 # Loop through the specified number of iterations
 for i in range(TG_trials):
+
     # Display the investment prompt
     investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
     investment_p = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
