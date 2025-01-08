@@ -6,6 +6,9 @@ def wait_for_spacebar():
     """
     Waits for the user to press the space bar and clears residual events.
     """
+    # Clear any previous key presses
+    event.clearEvents()
+
     while True:
         keys = event.getKeys()  # Check for keypresses
         if 'space' in keys:  # Check if space was pressed
@@ -67,13 +70,113 @@ def display_text(win, text, bold_indices=None, font_sizes=None, color_indices=No
         obj.draw()
     win.flip()
 
-from psychopy import visual, event
+def display_text_ESM(win, text, position='left'):
+    """
+    Display text on either the left or right part of the window.
 
-from psychopy import visual, event, core
+    Parameters:
+    - win: The PsychoPy window object.
+    - text: The text to display.
+    - position: 'left' or 'right' to specify which half of the window to display the text on.
+    """
+    # Determine the position based on the parameter
+    if position == 'left':
+        pos = (-0.5, 0)  # Left side in normalized units
+    elif position == 'right':
+        pos = (0.5, 0)  # Right side in normalized units
+    else:
+        raise ValueError("Position must be 'left' or 'right'.")
 
-from psychopy import visual, event, core
+    # Create the text stimulus
+    text_stim = visual.TextStim(
+        win=win,
+        text=text,
+        color=[-1, -1, -1],  # Black text
+        pos=pos,  # Position based on the side
+        height=0.05  # Scalable text height
+    )
 
-from psychopy import visual, event, core
+    # Draw and flip the window to display the text
+    text_stim.draw()
+
+def single_selection_screen(win, words, header_text, feeling):
+    """
+    Displays a single selection screen with navigation and confirmation for one participant.
+
+    Parameters:
+    - win: PsychoPy window object.
+    - words: List of words to display.
+    - keys: Dictionary with keys for navigation ('up', 'down', 'confirm').
+    - header_text: Text displayed at the top.
+    - feeling: Additional text displayed with the header.
+    """
+    # Clear any previous key presses
+    event.clearEvents()
+    # Create a Keyboard object
+    kb = keyboard.Keyboard()
+
+    # Initial index for highlighted word
+    index = 0
+    confirmed = False
+
+    # Function to draw words with highlighted index and a rectangle around it
+    def draw_words(words, highlight_index, x_pos=0):
+        # Draw header text
+        header = visual.TextStim(
+            win=win,
+            text=header_text + " " + feeling,
+            pos=(x_pos, 0.7),  # Position the header above the words
+            color=[-1, -1, -1],  # Black text
+            height=0.05
+        )
+        header.draw()
+
+        # Draw selectable words
+        for i, word in enumerate(words):
+            color = [-1, -1, -1] if i != highlight_index else [1, -1, -1]  # Highlight color
+            message = visual.TextStim(
+                win=win,
+                text=word,
+                pos=(x_pos, 0.3 - 0.1 * i),  # Position words vertically
+                color=color,
+                height=0.05
+            )
+            message.draw()
+
+            # Draw a rectangle around the highlighted word
+            if i == highlight_index:
+                rect = visual.Rect(
+                    win=win,
+                    width=0.8,  # Width of the rectangle
+                    height=0.08,  # Height of the rectangle
+                    pos=(x_pos, 0.3 - 0.1 * i),  # Same position as the highlighted word
+                    lineColor=[1, -1, -1],  # Red border
+                    lineWidth=3
+                )
+                rect.draw()
+
+    # Main loop
+    while not confirmed:
+        # Clear the screen
+        win.clearBuffer()
+
+        # Draw words for the single side
+        draw_words(words, index)
+
+        # Flip the window to update the screen
+        win.flip()
+
+        keys_pressed = event.getKeys()
+        for key in keys_pressed:
+            if key == key_mappings['up']:
+                index = (index - 1) % len(words)  # Move selection up
+            elif key == key_mappings['down']:
+                index = (index + 1) % len(words)  # Move selection down
+            elif key == key_mappings['confirm']:
+                confirmed = True  # Confirm selection
+
+    # Return the selected index
+    return index
 
 
 def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
