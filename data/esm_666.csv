@@ -1,11 +1,82 @@
-participant,esm,question,answer_left,answer_right
-666,before,związany/a z innymi?,0
-666,before,zestresowany/a,0
-666,before,zaniepokojony/a,0
-666,before,odprężony/a?,0
-666,before,akceptowany/a,0
-666,before,samotny/a,0
-666,before,radosny/a?,0
-666,before,spokojny/a,0
-666,before,samotny/a,0
-666,before,wykluczony/a,0
+participant,esm,question,answer,previous_condition
+666,before,związany/a z innymi?,0,none
+666,before,akceptowany/a,0,none
+666,before,radosny/a?,0,none
+666,before,spokojny/a,0,none
+666,before,zestresowany/a,0,none
+666,before,zaniepokojony/a,0,none
+666,before,odprężony/a?,0,none
+666,before,wykluczony/a,0,none
+666,before,samotny/a,0,none
+666,first,radosny/a?,0,fair
+666,first,związany/a z innymi?,0,fair
+666,first,zaniepokojony/a,0,fair
+666,first,odprężony/a?,0,fair
+666,first,spokojny/a,0,fair
+666,first,akceptowany/a,0,fair
+666,first,zestresowany/a,0,fair
+666,first,zestresowany/a,0,fair
+666,first,godna zaufania,0,fair
+666,first,przyjazna,0,fair
+666,first,oceniająca,0,fair
+666,first,nieszczera,0,fair
+666,first,akceptująca,0,fair
+666,first,nieprzyjemna,0,fair
+666,first,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,fair
+666,first,Nasz cele w tej sytuacji są sprzeczne.,0,fair
+666,first,Każda z osób mogła uzyskać pożądane cele.,0,fair
+666,first,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,fair
+666,first,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,fair
+666,first,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,fair
+666,first,skupiałem/am się na swojej perspektywie.,0,fair
+666,first,przyjmowałem/am perspektywę drugiej osoby.,0,fair
+666,first,odczuwałem/am troskę i współczucie.,0,fair
+666,first,odczuwałem/am dystans i chłód,0,fair
+666,second,zaniepokojony/a,0,unfair
+666,second,akceptowany/a,0,unfair
+666,second,zestresowany/a,0,unfair
+666,second,odprężony/a?,0,unfair
+666,second,związany/a z innymi?,0,unfair
+666,second,radosny/a?,0,unfair
+666,second,spokojny/a,0,unfair
+666,second,spokojny/a,0,unfair
+666,second,nieszczera,0,unfair
+666,second,nieprzyjemna,0,unfair
+666,second,godna zaufania,0,unfair
+666,second,oceniająca,0,unfair
+666,second,przyjazna,0,unfair
+666,second,akceptująca,0,unfair
+666,second,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,unfair
+666,second,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,unfair
+666,second,Nasz cele w tej sytuacji są sprzeczne.,0,unfair
+666,second,Każda z osób mogła uzyskać pożądane cele.,0,unfair
+666,second,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,unfair
+666,second,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,unfair
+666,second,skupiałem/am się na swojej perspektywie.,0,unfair
+666,second,przyjmowałem/am perspektywę drugiej osoby.,0,unfair
+666,second,odczuwałem/am dystans i chłód,0,unfair
+666,second,odczuwałem/am troskę i współczucie.,0,unfair
+666,third,związany/a z innymi?,0,fair
+666,third,zaniepokojony/a,0,fair
+666,third,akceptowany/a,0,fair
+666,third,odprężony/a?,0,fair
+666,third,zestresowany/a,0,fair
+666,third,radosny/a?,0,fair
+666,third,spokojny/a,0,fair
+666,third,spokojny/a,0,fair
+666,third,akceptująca,0,fair
+666,third,przyjazna,0,fair
+666,third,oceniająca,0,fair
+666,third,nieprzyjemna,0,fair
+666,third,godna zaufania,0,fair
+666,third,nieszczera,0,fair
+666,third,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,fair
+666,third,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,fair
+666,third,Każda z osób mogła uzyskać pożądane cele.,0,fair
+666,third,Nasz cele w tej sytuacji są sprzeczne.,0,fair
+666,third,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,fair
+666,third,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,fair
+666,third,przyjmowałem/am perspektywę drugiej osoby.,0,fair
+666,third,odczuwałem/am troskę i współczucie.,0,fair
+666,third,skupiałem/am się na swojej perspektywie.,0,fair
+666,third,odczuwałem/am dystans i chłód,0,fair

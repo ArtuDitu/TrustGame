@@ -18,14 +18,15 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 666
+participant_number = 664
 # number of trials
 TG_trials = 5
 # start condition
 start_condition = 'fair'
+appraisal = False
 
 ###TG parameters
-min_investment_p = 1
+min_investment_p = 0
 max_investment_p = 10 # this is also initial budget
 previous_investment = None  # To track investment from the previous iteration
 
