@@ -1,0 +1,6 @@
+participant,condition,investment,investment_return,multiplier,return
+666,fair,5,15,1.3,6.5
+666,fair,4,12,1.4000000000000001,5.6000000000000005
+666,fair,4,12,1.3,5.2
+666,fair,4,12,1.3,5.2
+666,fair,7,21,1.2,8.4

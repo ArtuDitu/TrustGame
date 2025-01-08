@@ -79,7 +79,7 @@ esm_others_text = 'W tej części badania zostaną wyświetlone słowa odnosząc
 esm_interaction_text= 'Teraz wyświetlone zostaną stwierdzenia, które mogą ale nie muszą pasować do interakcji, w której się znajdujesz\n\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 5 (Zdecydowanie tak), czy przedstawione stwierdzenie pasuje do tej interakcji.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
 
 # esm activity text
-esm_activity_text_left = 'Teraz wyświetlone zostaną zdania dotyczące różnych stanów lub aktywności\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy występowały one u Ciebie w ciągu ostatnich 15 minut.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
+esm_activity_text = 'Teraz wyświetlone zostaną zdania dotyczące różnych stanów lub aktywności\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy występowały one u Ciebie w ciągu ostatnich 15 minut.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
 
 #esm end text
 esm_end_text = 'Dziękujemy za wypełnienie ankiety! \n\n\nPoczekaj na dalsze instrukcje od osoby prowadzącej badanie.'
@@ -88,7 +88,7 @@ esm_end_text = 'Dziękujemy za wypełnienie ankiety! \n\n\nPoczekaj na dalsze in
 #feeling text
 feeling_text = 'Czy czujesz się teraz... \n\n'
 #feelings
-feelings = ['radosny/a?', 'odprężony/a?', 'związany/a z innymi?', 'spokojny/a', 'samotny/a', 'akceptowany/a', 'zestresowany/a', 'zaniepokojony/a' ]
+feelings = ['radosny/a?', 'odprężony/a?', 'związany/a z innymi?', 'spokojny/a', 'akceptowany/a', 'zestresowany/a', 'zaniepokojony/a' ]
 feelings2 = ['samotny/a', 'wykluczony/a']
 
 

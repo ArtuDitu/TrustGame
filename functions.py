@@ -60,7 +60,7 @@ def display_text(win, text, bold_indices=None, font_sizes=None, color_indices=No
             win,
             text=text_part,
             bold=is_bold,
-            height=size if size else 0.1,  # Default font size is 0.1
+            height=size if size else 0.07,  # Default font size is 0.1
             color=color,
             pos=(0, 0)
         ))
