@@ -523,3 +523,7 @@ if appraisal:
     display_text(win, esm_end_text)
     # Keep the window open till spacebar pressed by the experimentator
     wait_for_spacebar()
+
+# Display welcome text
+display_text(win, end_text)
+wait_for_spacebar()

@@ -18,7 +18,7 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 659
+participant_number = 658
 # number of trials
 TG_trials = 5
 # start condition
@@ -68,6 +68,7 @@ key_mappings = {
 ### texts
 
 welcome_text = 'Witamy\n\n Wciśnij SPACE by kontynuować'
+end_text = 'To już koniec!\n\n Dziękujemy za udział w badaniu!'
 return_text_p = 'Twój powiernik zwrócił dla Ciebie:'
 
 ## instructions
