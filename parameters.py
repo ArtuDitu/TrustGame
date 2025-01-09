@@ -1,7 +1,7 @@
 # import libraries
-from psychopy import visual, core
-from psychopy.hardware import keyboard
+from psychopy import visual
 import os
+
 
 #import pyxid2 as pyxid2
 #######
@@ -18,12 +18,13 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 664
+participant_number = 660
 # number of trials
 TG_trials = 5
 # start condition
 start_condition = 'fair'
-appraisal = False
+appraisal = True
+understood = False
 
 ###TG parameters
 min_investment_p = 0
@@ -66,9 +67,15 @@ key_mappings = {
 
 ### texts
 
-welcome_text = 'Witamy\n\n Wciśnij spacje by kontynuować'
-instructions1 = 'Instrukcje'
+welcome_text = 'Witamy\n\n Wciśnij SPACE by kontynuować'
 return_text_p = 'Twój powiernik zwrócił dla Ciebie:'
+
+## instructions
+instructions1 = 'W tym badaniu będziesz wielokrotnie inwestował sumy pieniędzy z dwoma innymi partnerami (JACKIEM i MIRKIEM). \n Za każdym razem gdy powierzysz sume jednemu z powierników ta suma będzie potrojona\n\n Następnie dowiesz się ile ta inwestycja zarobiła oraz co najważniejsze ile twój powiernik (Jacek albo Mirek) zdecydowali się dla Ciebie zwrócić\n\nWciśnij SPACE by kontynuować'
+instructions2 = 'By zdecydować ile chcesz zainwestować będziesz musiał podać liczbę pomiędzy 0 i 10 oraz wcisnąć ENTER by ją potwierdzić.\n\n Wciśnij SPACE by spróbować'
+instructions3 = 'Teraz się dowiesz ile ta inwestycja zarobiła pieniędzy.\n\n Wciśnij SPACE by kontynuować'
+instructions4 = 'Teraz się dowiesz ile twój powiernik zdecydował się tobie zwrócić.\n\n Wciśnij SPACE by kontynuować'
+instructions5 = 'To już całe instrukcje. Pamiętaj, musisz podjąć decyzje ile chcesz zainwestować i po tym dowiesz się ile twój powiernik zdecydował Ci sie zwrócić.\n\n Jeśli zrozumiałeś całe instrukcje to wciśnij SPACE by kontynować.\n\n Jeśli chciałbym zobaczyć instrukje jeszcze raz wciśnij ENTER'
 
 # esm initial text
 esm_start_text = 'W tej części badania zostaną wyświetlone słowa, które opisują rożne uczucia i emocje.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy czujesz się w określony sposób.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
@@ -114,3 +121,6 @@ activity_opinions = ['przyjmowałem/am perspektywę drugiej osoby.', 'odczuwałe
 words_7 = ["Zdecydowanie nie", "Nie", "Raczej nie", "Ani tak, ani nie", "Raczej tak", "Tak", "Zdecydowanie tak"]
 words_5 = ["Zdecydowanie nie", "Raczej nie", "Ani tak, ani nie", "Raczej tak", "Zdecydowanie tak"]
 words_person = ["Zdecydowanie druga osoba", "Raczej druga osoba", "Ani druga osoba, ani ja", "Raczej ja", "Zdecydowanie ja"]
+
+text_block1and3 = 'W tej części będziesz inwestował z JACKIEM\n\n Naciśnij teraz SPACE by kontynuować \n\n Inwestycje się rozpoczną gdy JACEK będzie gotowy'
+text_block2and4 = 'W tej części będziesz inwestował z MIRKIEM\n\n Naciśnij teraz SPACE by kontynuować \n\n Inwestycje się rozpoczną gdy MIREK będzie gotowy'

@@ -14,6 +14,20 @@ def wait_for_spacebar():
         if 'space' in keys:  # Check if space was pressed
             break
 
+def wait_for_input():
+    """
+    Waits for the user to press either the space bar or the enter key and returns different information based on the input.
+    """
+    # Clear any previous key presses
+    event.clearEvents()
+
+    while True:
+        keys = event.getKeys()  # Check for keypresses
+        if 'space' in keys:  # Check if space was pressed
+            return "Space bar pressed"
+        elif 'return' in keys:  # Check if enter was pressed
+            return "Enter key pressed"
+
 
 from psychopy import visual, core
 
@@ -189,7 +203,13 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
         min_investment (int): Minimum allowed investment.
         max_investment (int): Maximum allowed investment.
         font_size (float): Font size for the text and prompt (default: 0.1).
+
+    Returns:
+        tuple: A tuple containing the entered investment and the reaction time (RT).
     """
+    # Clear any previous key presses
+    event.clearEvents()
+
     # Create input prompt and warning text
     prompt_stim = visual.TextStim(
         win,
@@ -216,6 +236,10 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     investment = None
     input_text = ""
 
+    # Start the clock to measure reaction time
+    rt_clock = core.Clock()
+    rt_clock.reset()
+
     while investment is None:
         # Draw the components
         prompt_stim.draw()
@@ -239,6 +263,7 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
                             warning_stim.text = "Zła wartość: inwestycja powyżej maksimum, spróbuj ponownie."
                         else:
                             investment = entered_value  # Valid input
+                            rt = rt_clock.getTime()  # Record reaction time
                             break
                     except ValueError:
                         warning_stim.text = "Nie podałeś właściwej wartości, spróbuj jeszcze raz."
@@ -253,7 +278,7 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     # Clear the screen after valid input
     win.flip()
 
-    return investment
+    return investment, rt
 
 
 def tg_return(win, return_text, investment, multiplier, font_size=0.1):
@@ -290,7 +315,7 @@ def tg_return(win, return_text, investment, multiplier, font_size=0.1):
     )
     investment_stim = visual.TextStim(
         win,
-        text= '\n\nWciśnij spacje by kontynuować',
+        text= '\n\nWciśnij SPACE by kontynuować',
         color="white",
         height=font_size * 0.8,
         pos=(0, -0.2)  # Below the return value

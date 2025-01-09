@@ -11,12 +11,38 @@ import time
 display_text(win, welcome_text)
 wait_for_spacebar()
 
-# display instructions
-display_text(win, instructions1)
-wait_for_spacebar()
+while not understood:
+    # display instructions
+    display_text(win, instructions1)
+    wait_for_spacebar()
+    display_text(win, instructions2)
+    wait_for_spacebar()
+    investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
+    investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
+    investment_return = 3 * investment_p
+    display_text(win, instructions3)
+    wait_for_spacebar()
+    display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
+    wait_for_spacebar()
+    display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.\n\n Poczekaj na decyzje swojego powiernika')
+    # Generate a random float between 3 and 8 seconds
+    delay = random.uniform(5, 10)
+    # Wait for the random delay
+    core.wait(delay)
+    display_text(win, instructions4)
+    wait_for_spacebar()
+    return_p = tg_return(win, return_text=return_text_p, investment=investment_p, multiplier=1.5)
+    wait_for_spacebar()
+    display_text(win, instructions5)
+    instructions_input = wait_for_input()
+    if instructions_input == "Space bar pressed":
+        understood = True
+    elif instructions_input == "Enter key pressed":
+        understood = False
 
 
-while appraisal:
+# appraisal start
+if appraisal:
     ### appraisal start
     # Display text on the left side
     display_text(win, esm_start_text)
@@ -45,15 +71,18 @@ while appraisal:
     # Keep the window open till spacebar pressed by the experimentator
     wait_for_spacebar()
 
-    # open  a file to store esm data
-    with open(tg_file_path, mode='w', newline='', encoding = 'utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(["participant", "condition", 'investment', 'investment_return','multiplier','return', 'budget'])  # Write the header row
-
+# open  a file to store esm data
+with open(tg_file_path, mode='w', newline='', encoding = 'utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(["participant", "condition", 'investment', 'investment_return','multiplier','return', 'RT'])  # Write the header row
 
 # tg block 1
 # Loop through the specified number of iterations
 
+# Display block start name
+display_text(win, text_block1and3)
+wait_for_spacebar()
+core.wait(3)
 with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     writer = csv.writer(file)
     if start_condition == "fair":
@@ -69,12 +98,17 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
-        investment_p = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
+        investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
         investment_return = 3*investment_p
-        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij spację, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
+        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
         wait_for_spacebar()
+        display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.\n\n Poczekaj na decyzje swojego powiernika')
+        # Generate a random float between 3 and 8 seconds
+        delay = random.uniform(5, 10)
+        # Wait for the random delay
+        core.wait(delay)
 
         # Adjust the multiplier based on the investment compared to the previous one
         if previous_investment is not None:
@@ -87,14 +121,12 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
         return_p = tg_return(win, return_text=return_text_p, investment=investment_p, multiplier=multiplier)
         wait_for_spacebar()
 
-        # Update the budget (max_investment_p) based on the initial budget
-        max_investment_p -= investment_p
-        max_investment_p += return_p
         # Store the current investment for comparison in the next iteration
         previous_investment = investment_p
-        writer.writerow([participant_number, start_condition , investment_p, investment_return, multiplier,return_p, max_investment_p])  # Write the header row
+        writer.writerow([participant_number, start_condition , investment_p, investment_return, multiplier,return_p, rt])  # Write the header row
 
-while appraisal:
+# appraisal 1
+if appraisal:
     ### appraisal
     # Display text on the left side
     display_text(win, esm_start_text)
@@ -157,6 +189,10 @@ while appraisal:
     # Keep the window open till spacebar pressed by the experimentator
     wait_for_spacebar()
 
+# Display block start name
+display_text(win, text_block2and4)
+wait_for_spacebar()
+core.wait(3)
 # tg block 2
 with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     writer = csv.writer(file)
@@ -175,12 +211,17 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
-        investment_p = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
+        investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
         investment_return = 3*investment_p
-        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij spację, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
+        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
         wait_for_spacebar()
+        display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.\n\n Poczekaj na decyzje swojego powiernika')
+        # Generate a random float between 3 and 8 seconds
+        delay = random.uniform(5, 10)
+        # Wait for the random delay
+        core.wait(delay)
 
         # Adjust the multiplier based on the investment compared to the previous one
         if previous_investment is not None:
@@ -193,14 +234,11 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
         return_p = tg_return(win, return_text=return_text_p, investment=investment_p, multiplier=multiplier)
         wait_for_spacebar()
 
-        # Update the budget (max_investment_p) based on the initial budget
-        max_investment_p -= investment_p
-        max_investment_p += return_p
         # Store the current investment for comparison in the next iteration
         previous_investment = investment_p
-        writer.writerow([participant_number, condition , investment_p, investment_return, multiplier,return_p, max_investment_p])  # Write the header row
+        writer.writerow([participant_number, condition , investment_p, investment_return, multiplier,return_p, rt])  # Write the header row
 
-while appraisal:
+if appraisal:
     ### appraisal 2
     # Display text on the left side
     display_text(win, esm_start_text)
@@ -263,7 +301,10 @@ while appraisal:
     # Keep the window open till spacebar pressed by the experimentator
     wait_for_spacebar()
 
-
+# Display block start name
+display_text(win, text_block1and3)
+wait_for_spacebar()
+core.wait(3)
 # tg block 3
 with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     writer = csv.writer(file)
@@ -280,12 +321,17 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
-        investment_p = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
+        investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
         investment_return = 3*investment_p
-        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij spację, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
+        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
         wait_for_spacebar()
+        display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.\n\n Poczekaj na decyzje swojego powiernika')
+        # Generate a random float between 3 and 8 seconds
+        delay = random.uniform(5, 10)
+        # Wait for the random delay
+        core.wait(delay)
 
         # Adjust the multiplier based on the investment compared to the previous one
         if previous_investment is not None:
@@ -298,14 +344,12 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
         return_p = tg_return(win, return_text=return_text_p, investment=investment_p, multiplier=multiplier)
         wait_for_spacebar()
 
-        # Update the budget (max_investment_p) based on the initial budget
-        max_investment_p -= investment_p
-        max_investment_p += return_p
         # Store the current investment for comparison in the next iteration
         previous_investment = investment_p
-        writer.writerow([participant_number, start_condition , investment_p, investment_return, multiplier,return_p, max_investment_p])  # Write the header row
+        writer.writerow([participant_number, start_condition , investment_p, investment_return, multiplier,return_p, rt])  # Write the header row
 
-while appraisal:
+# appraisal 3
+if appraisal:
     ### appraisal 3
     # Display text on the left side
     display_text(win, esm_start_text)
@@ -367,6 +411,10 @@ while appraisal:
     # Keep the window open till spacebar pressed by the experimentator
     wait_for_spacebar()
 
+# Display block start name
+display_text(win, text_block2and4)
+wait_for_spacebar()
+core.wait(3)
 # tg block 4
 with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     writer = csv.writer(file)
@@ -385,12 +433,17 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         investment_text = f'Masz w tej chwili {max_investment_p:.2f}\n\n\nIlę chciałabyś/byś zainwestować?'
-        investment_p = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
+        investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
         investment_return = 3*investment_p
-        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij spację, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
+        display_text(win, f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.')
         wait_for_spacebar()
+        display_text(win,f'Inwestycja została pomnożona trzykrotnie i wynosi {investment_return:.2f}.\n\n\nWciśnij SPACE, aby się dowiedzieć ile powiernik zdecydował się Ci zwrócić.\n\n Poczekaj na decyzje swojego powiernika')
+        # Generate a random float between 3 and 8 seconds
+        delay = random.uniform(5, 10)
+        # Wait for the random delay
+        core.wait(delay)
 
         # Adjust the multiplier based on the investment compared to the previous one
         if previous_investment is not None:
@@ -403,14 +456,12 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
         return_p = tg_return(win, return_text=return_text_p, investment=investment_p, multiplier=multiplier)
         wait_for_spacebar()
 
-        # Update the budget (max_investment_p) based on the initial budget
-        max_investment_p -= investment_p
-        max_investment_p += return_p
         # Store the current investment for comparison in the next iteration
         previous_investment = investment_p
-        writer.writerow([participant_number, condition , investment_p, investment_return, multiplier,return_p, max_investment_p, max_investment_p])  # Write the header row
+        writer.writerow([participant_number, condition , investment_p, investment_return, multiplier,return_p, max_investment_p, rt])  # Write the header row
 
-while appraisal:
+# appraisal 4
+if appraisal:
     ### appraisal 3
     # Display text on the left side
     display_text(win, esm_start_text)
