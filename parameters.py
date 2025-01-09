@@ -18,13 +18,18 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 658
+participant_number = 656
 # number of trials
 TG_trials = 5
 # start condition
 start_condition = 'fair'
 appraisal = True
 understood = False
+# fixation cross
+iti =  1
+jitter = 0.1
+cross_feedback = 0.8
+feedback_time = 5
 
 ###TG parameters
 min_investment_p = 0
@@ -67,28 +72,28 @@ key_mappings = {
 
 ### texts
 
-welcome_text = 'Witamy\n\n Wciśnij SPACE by kontynuować'
+welcome_text = 'Witamy\n\n Wciśnij spacje by kontynuować'
 end_text = 'To już koniec!\n\n Dziękujemy za udział w badaniu!'
 return_text_p = 'Twój powiernik zwrócił dla Ciebie:'
 
 ## instructions
-instructions1 = 'W tym badaniu będziesz wielokrotnie inwestował sumy pieniędzy z dwoma innymi partnerami (JACKIEM i MIRKIEM). \n Za każdym razem gdy powierzysz sume jednemu z powierników ta suma będzie potrojona\n\n Następnie dowiesz się ile ta inwestycja zarobiła oraz co najważniejsze ile twój powiernik (Jacek albo Mirek) zdecydowali się dla Ciebie zwrócić\n\nWciśnij SPACE by kontynuować'
-instructions2 = 'By zdecydować ile chcesz zainwestować będziesz musiał podać liczbę pomiędzy 0 i 10 oraz wcisnąć ENTER by ją potwierdzić.\n\n Wciśnij SPACE by spróbować'
-instructions3 = 'Teraz się dowiesz ile ta inwestycja zarobiła pieniędzy.\n\n Wciśnij SPACE by kontynuować'
-instructions4 = 'Teraz się dowiesz ile twój powiernik zdecydował się tobie zwrócić.\n\n Wciśnij SPACE by kontynuować'
-instructions5 = 'To już całe instrukcje. Pamiętaj, musisz podjąć decyzje ile chcesz zainwestować i po tym dowiesz się ile twój powiernik zdecydował Ci sie zwrócić.\n\n Jeśli zrozumiałeś całe instrukcje to wciśnij SPACE by kontynować.\n\n Jeśli chciałbym zobaczyć instrukje jeszcze raz wciśnij ENTER'
+instructions1 = 'W tym badaniu będziesz wielokrotnie inwestował sumy pieniędzy z dwoma innymi partnerami (JACKIEM i MIRKIEM). \n Za każdym razem gdy powierzysz sume jednemu z powierników ta suma będzie potrojona\n\n Następnie dowiesz się ile ta inwestycja zarobiła oraz co najważniejsze ile twój powiernik (Jacek albo Mirek) zdecydowali się dla Ciebie zwrócić\n\nWciśnij spacje by kontynuować'
+instructions2 = 'By zdecydować ile chcesz zainwestować będziesz musiał podać liczbę pomiędzy 0 i 10 oraz wcisnąć ENTER by ją potwierdzić.\n\n Wciśnij spacje by spróbować'
+instructions3 = 'Teraz się dowiesz ile ta inwestycja zarobiła pieniędzy.\n\n Wciśnij spacje by kontynuować'
+instructions4 = 'Teraz się dowiesz ile twój powiernik zdecydował się tobie zwrócić.\n\n Wciśnij spacje by kontynuować'
+instructions5 = 'To już całe instrukcje. Pamiętaj, musisz podjąć decyzje ile chcesz zainwestować i po tym dowiesz się ile twój powiernik zdecydował Ci sie zwrócić.\n\n Jeśli zrozumiałeś całe instrukcje to wciśnij spacje by kontynować.\n\n Jeśli chciałbym zobaczyć instrukje jeszcze raz wciśnij ENTER'
 
 # esm initial text
-esm_start_text = 'W tej części badania zostaną wyświetlone słowa, które opisują rożne uczucia i emocje.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy czujesz się w określony sposób.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
+esm_start_text = 'W tej części badania zostaną wyświetlone słowa, które opisują rożne uczucia i emocje.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy czujesz się w określony sposób.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz spacje by kontynuować'
 
 # esm others text
-esm_others_text = 'W tej części badania zostaną wyświetlone słowa odnoszące się do sposobu, w jaki można odbierać innych ludzi.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy dane określenie wydaje Ci się pasować do osoby z drugiego pokoju.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
+esm_others_text = 'W tej części badania zostaną wyświetlone słowa odnoszące się do sposobu, w jaki można odbierać innych ludzi.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy dane określenie wydaje Ci się pasować do osoby z drugiego pokoju.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz spacje by kontynuować'
 
 # esm interaction text
-esm_interaction_text= 'Teraz wyświetlone zostaną stwierdzenia, które mogą ale nie muszą pasować do interakcji, w której się znajdujesz\n\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 5 (Zdecydowanie tak), czy przedstawione stwierdzenie pasuje do tej interakcji.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
+esm_interaction_text= 'Teraz wyświetlone zostaną stwierdzenia, które mogą ale nie muszą pasować do interakcji, w której się znajdujesz\n\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 5 (Zdecydowanie tak), czy przedstawione stwierdzenie pasuje do tej interakcji.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz spacje by kontynuować'
 
 # esm activity text
-esm_activity_text = 'Teraz wyświetlone zostaną zdania dotyczące różnych stanów lub aktywności\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy występowały one u Ciebie w ciągu ostatnich 15 minut.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz SPACE by kontynuować'
+esm_activity_text = 'Teraz wyświetlone zostaną zdania dotyczące różnych stanów lub aktywności\nZaznacz proszę na skali od 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy występowały one u Ciebie w ciągu ostatnich 15 minut.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz spacje by kontynuować'
 
 #esm end text
 esm_end_text = 'Dziękujemy za wypełnienie ankiety! \n\n\nPoczekaj na dalsze instrukcje od osoby prowadzącej badanie.'
@@ -123,5 +128,5 @@ words_7 = ["Zdecydowanie nie", "Nie", "Raczej nie", "Ani tak, ani nie", "Raczej 
 words_5 = ["Zdecydowanie nie", "Raczej nie", "Ani tak, ani nie", "Raczej tak", "Zdecydowanie tak"]
 words_person = ["Zdecydowanie druga osoba", "Raczej druga osoba", "Ani druga osoba, ani ja", "Raczej ja", "Zdecydowanie ja"]
 
-text_block1and3 = 'W tej części będziesz inwestował z JACKIEM\n\n Naciśnij teraz SPACE by kontynuować \n\n Inwestycje się rozpoczną gdy JACEK będzie gotowy'
-text_block2and4 = 'W tej części będziesz inwestował z MIRKIEM\n\n Naciśnij teraz SPACE by kontynuować \n\n Inwestycje się rozpoczną gdy MIREK będzie gotowy'
+text_block1and3 = 'W tej części będziesz inwestował z JACKIEM\n\n Naciśnij teraz spacje by kontynuować \n\n Inwestycje się rozpoczną gdy JACEK będzie gotowy'
+text_block2and4 = 'W tej części będziesz inwestował z MIRKIEM\n\n Naciśnij teraz spacje by kontynuować \n\n Inwestycje się rozpoczną gdy MIREK będzie gotowy'

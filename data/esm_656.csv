@@ -1,0 +1,19 @@
+participant,esm,question,answer,previous_condition
+656,before,akceptowany/a,3,none
+656,before,odprężony/a?,3,none
+656,before,związany/a z innymi?,3,none
+656,before,zestresowany/a,3,none
+656,before,spokojny/a,3,none
+656,before,zaniepokojony/a,3,none
+656,before,radosny/a?,3,none
+656,before,wykluczony/a,3,none
+656,before,samotny/a,3,none
+656,first,akceptowany/a,3,fair
+656,first,zaniepokojony/a,3,fair
+656,first,odprężony/a?,3,fair
+656,first,związany/a z innymi?,3,fair
+656,first,spokojny/a,3,fair
+656,first,radosny/a?,3,fair
+656,first,zestresowany/a,3,fair
+656,first,samotny/a,3,fair
+656,first,wykluczony/a,3,fair

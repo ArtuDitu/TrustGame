@@ -1,0 +1,35 @@
+participant,esm,question,answer,previous_condition
+658,before,odprężony/a?,0,none
+658,before,spokojny/a,0,none
+658,before,zaniepokojony/a,0,none
+658,before,akceptowany/a,0,none
+658,before,związany/a z innymi?,0,none
+658,before,radosny/a?,0,none
+658,before,zestresowany/a,0,none
+658,before,samotny/a,0,none
+658,before,wykluczony/a,0,none
+658,first,zestresowany/a,0,fair
+658,first,związany/a z innymi?,0,fair
+658,first,akceptowany/a,0,fair
+658,first,zaniepokojony/a,0,fair
+658,first,odprężony/a?,0,fair
+658,first,spokojny/a,0,fair
+658,first,radosny/a?,0,fair
+658,first,samotny/a,0,fair
+658,first,wykluczony/a,0,fair
+658,first,przyjazna,0,fair
+658,first,akceptująca,0,fair
+658,first,oceniająca,0,fair
+658,first,godna zaufania,0,fair
+658,first,nieszczera,0,fair
+658,first,nieprzyjemna,0,fair
+658,first,Każda z osób mogła uzyskać pożądane cele.,0,fair
+658,first,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,fair
+658,first,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,fair
+658,first,Nasz cele w tej sytuacji są sprzeczne.,0,fair
+658,first,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,fair
+658,first,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,fair
+658,first,przyjmowałem/am perspektywę drugiej osoby.,0,fair
+658,first,odczuwałem/am troskę i współczucie.,0,fair
+658,first,skupiałem/am się na swojej perspektywie.,0,fair
+658,first,odczuwałem/am dystans i chłód,0,fair

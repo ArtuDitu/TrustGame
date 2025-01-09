@@ -1,5 +1,6 @@
 from psychopy.hardware import keyboard
-from psychopy import visual, event, core
+from psychopy import event, visual, core
+import random
 from parameters import  *
 
 def wait_for_spacebar():
@@ -27,10 +28,6 @@ def wait_for_input():
             return "Space bar pressed"
         elif 'return' in keys:  # Check if enter was pressed
             return "Enter key pressed"
-
-
-from psychopy import visual, core
-
 
 def display_text(win, text, bold_indices=None, font_sizes=None, color_indices=None):
     """
@@ -129,8 +126,8 @@ def single_selection_screen(win, words, header_text, feeling):
     # Create a Keyboard object
     kb = keyboard.Keyboard()
 
-    # Initial index for highlighted word
-    index = 0
+    # Initial index for highlighted word set to middle of the list
+    index = len(words) // 2
     confirmed = False
 
     # Function to draw words with highlighted index and a rectangle around it
@@ -192,6 +189,65 @@ def single_selection_screen(win, words, header_text, feeling):
     # Return the selected index
     return index
 
+def display_question_with_input(win, question_text, font_size=0.1):
+    """
+    Displays a question and allows the user to input text below, confirming with Enter.
+
+    Parameters:
+        win (visual.Window): The PsychoPy window object.
+        question_text (str): The question to be displayed.
+        font_size (float): Font size for the question and input (default: 0.1).
+
+    Returns:
+        str: The text input provided by the user.
+    """
+
+    # Create question text stimulus
+    question_stim = visual.TextStim(
+        win,
+        text=question_text,
+        color="white",
+        height=font_size,
+        pos=(0, 0.3)  # Position the question at the top
+    )
+
+    # Create input display stimulus
+    input_display = visual.TextStim(
+        win,
+        text="",  # Start with empty input
+        color="white",
+        height=font_size,
+        pos=(0, -.1)  # Position below the question
+    )
+
+    input_text = ""
+    confirmed = False
+
+    while not confirmed:
+        # Draw question and current input
+        question_stim.draw()
+        input_display.text = input_text  # Update displayed input
+        input_display.draw()
+        win.flip()
+
+        # Get key presses
+        keys = event.getKeys()
+        for key in keys:
+            if key == "return":  # Confirm input with Enter
+                if any(char.isalpha() for char in input_text):  # Proceed only if input contains at least one letter
+                    confirmed = True
+                    break
+            elif key == "backspace":  # Handle backspace
+                input_text = input_text[:-1]
+            elif key == "escape":  # Exit option
+                core.quit()
+            elif key.isalpha() and len(key) == 1:  # Allow only single alphabetic characters (ignore capslock and shift)
+                input_text += key.upper()
+
+    # Clear the screen after input is confirmed
+    win.flip()
+
+    return input_text
 
 def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     """
@@ -223,14 +279,14 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
         text="",  # Start with empty input
         color="white",
         height=font_size,
-        pos=(0, -0.1)  # Position below the prompt
+        pos=(0, -0.4)  # Position below the prompt
     )
     warning_stim = visual.TextStim(
         win,
         text="",  # Start with no warning
         color="red",
         height=font_size * 0.8,
-        pos=(0, -0.3)  # Position below the input display
+        pos=(0, -0.6)  # Position below the input display
     )
 
     investment = None
@@ -283,8 +339,6 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
 
     return investment, rt
 
-
-
 def tg_return(win, return_text, investment, multiplier, font_size=0.1):
     """
     Display the return to the player after their investment.
@@ -295,7 +349,6 @@ def tg_return(win, return_text, investment, multiplier, font_size=0.1):
         investment (float): The player's initial investment.
         multiplier (float): The multiplier used to calculate the return.
         font_size (float): Font size for the text (default: 0.1).
-        duration (float): Duration in seconds to display the result (default: 5).
     """
     # Clear any previous key presses
     event.clearEvents()
@@ -312,14 +365,14 @@ def tg_return(win, return_text, investment, multiplier, font_size=0.1):
     )
     return_stim = visual.TextStim(
         win,
-        text=f"{return_value:.2f}",  # Display the calculated return
+        text=f"{return_value:.1f}",  # Display the calculated return
         color="white",
         height=font_size,
         pos=(0, 0)  # Centered below the message
     )
     investment_stim = visual.TextStim(
         win,
-        text= '\n\nWciśnij SPACE by kontynuować',
+        text= '',
         color="white",
         height=font_size * 0.8,
         pos=(0, -0.2)  # Below the return value
@@ -332,6 +385,35 @@ def tg_return(win, return_text, investment, multiplier, font_size=0.1):
     win.flip()
 
     return return_value
+
+def display_fixation_cross(win, duration, jitter=0.0):
+    """
+    Displays a fixation cross in the middle of the screen for a given duration plus added jitter.
+
+    Parameters:
+        win (visual.Window): The PsychoPy window object.
+        duration (float): Base duration (in seconds) for displaying the fixation cross.
+        jitter (float): Maximum jitter (in seconds) to add to the duration (default: 0.0).
+    """
+    # Create the fixation cross stimulus
+    fixation = visual.TextStim(
+        win,
+        text='+',
+        color="white",
+        height=0.1  # Size of the fixation cross
+    )
+
+    # Calculate the total duration with jitter (jitter can be positive or negative)
+    total_duration = duration + random.uniform(-jitter, jitter)
+
+    # Display the fixation cross
+    fixation.draw()
+    win.flip()
+
+    # Wait for the total duration
+    core.wait(total_duration)
+
+    return jitter
 
 
 
