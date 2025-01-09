@@ -18,7 +18,7 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 660
+participant_number = 659
 # number of trials
 TG_trials = 5
 # start condition

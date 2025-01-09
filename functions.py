@@ -236,9 +236,9 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     investment = None
     input_text = ""
 
-    # Start the clock to measure reaction time
+    # Start the clock to measure reaction time after the first screen flip
     rt_clock = core.Clock()
-    rt_clock.reset()
+    first_flip = True
 
     while investment is None:
         # Draw the components
@@ -246,6 +246,9 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
         input_display.text = input_text  # Update displayed text
         input_display.draw()
         warning_stim.draw()
+        if first_flip:
+            rt_clock.reset()  # Reset clock after first flip
+            first_flip = False
         win.flip()
 
         # Get key presses
@@ -279,6 +282,7 @@ def tg_invest(win, prompt_text, min_investment, max_investment, font_size=0.1):
     win.flip()
 
     return investment, rt
+
 
 
 def tg_return(win, return_text, investment, multiplier, font_size=0.1):

@@ -1,0 +1,109 @@
+participant,esm,question,answer,previous_condition
+659,before,radosny/a?,0,none
+659,before,akceptowany/a,0,none
+659,before,spokojny/a,0,none
+659,before,odprężony/a?,0,none
+659,before,zaniepokojony/a,0,none
+659,before,związany/a z innymi?,0,none
+659,before,zestresowany/a,0,none
+659,before,samotny/a,0,none
+659,before,wykluczony/a,0,none
+659,first,odprężony/a?,0,fair
+659,first,radosny/a?,0,fair
+659,first,związany/a z innymi?,0,fair
+659,first,zestresowany/a,0,fair
+659,first,akceptowany/a,0,fair
+659,first,zaniepokojony/a,0,fair
+659,first,spokojny/a,0,fair
+659,first,samotny/a,0,fair
+659,first,wykluczony/a,0,fair
+659,first,nieprzyjemna,0,fair
+659,first,oceniająca,0,fair
+659,first,przyjazna,0,fair
+659,first,nieszczera,0,fair
+659,first,akceptująca,0,fair
+659,first,godna zaufania,0,fair
+659,first,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,fair
+659,first,Każda z osób mogła uzyskać pożądane cele.,0,fair
+659,first,Nasz cele w tej sytuacji są sprzeczne.,0,fair
+659,first,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,fair
+659,first,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,fair
+659,first,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,fair
+659,first,odczuwałem/am dystans i chłód,0,fair
+659,first,odczuwałem/am troskę i współczucie.,0,fair
+659,first,przyjmowałem/am perspektywę drugiej osoby.,0,fair
+659,first,skupiałem/am się na swojej perspektywie.,0,fair
+659,second,związany/a z innymi?,0,unfair
+659,second,radosny/a?,0,unfair
+659,second,odprężony/a?,0,unfair
+659,second,zestresowany/a,0,unfair
+659,second,zaniepokojony/a,0,unfair
+659,second,spokojny/a,0,unfair
+659,second,akceptowany/a,0,unfair
+659,second,wykluczony/a,0,unfair
+659,second,samotny/a,0,unfair
+659,second,nieprzyjemna,0,unfair
+659,second,godna zaufania,0,unfair
+659,second,oceniająca,0,unfair
+659,second,akceptująca,0,unfair
+659,second,przyjazna,0,unfair
+659,second,nieszczera,0,unfair
+659,second,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,unfair
+659,second,Nasz cele w tej sytuacji są sprzeczne.,0,unfair
+659,second,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,unfair
+659,second,Każda z osób mogła uzyskać pożądane cele.,0,unfair
+659,second,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,unfair
+659,second,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,unfair
+659,second,odczuwałem/am troskę i współczucie.,0,unfair
+659,second,odczuwałem/am dystans i chłód,0,unfair
+659,second,przyjmowałem/am perspektywę drugiej osoby.,0,unfair
+659,second,skupiałem/am się na swojej perspektywie.,0,unfair
+659,third,zaniepokojony/a,0,fair
+659,third,odprężony/a?,0,fair
+659,third,akceptowany/a,0,fair
+659,third,zestresowany/a,0,fair
+659,third,związany/a z innymi?,0,fair
+659,third,spokojny/a,0,fair
+659,third,radosny/a?,0,fair
+659,third,radosny/a?,0,fair
+659,third,nieszczera,0,fair
+659,third,akceptująca,0,fair
+659,third,godna zaufania,0,fair
+659,third,nieprzyjemna,0,fair
+659,third,oceniająca,0,fair
+659,third,przyjazna,0,fair
+659,third,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,fair
+659,third,Nasz cele w tej sytuacji są sprzeczne.,0,fair
+659,third,Każda z osób mogła uzyskać pożądane cele.,0,fair
+659,third,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,fair
+659,third,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,fair
+659,third,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,fair
+659,third,przyjmowałem/am perspektywę drugiej osoby.,0,fair
+659,third,odczuwałem/am dystans i chłód,0,fair
+659,third,skupiałem/am się na swojej perspektywie.,0,fair
+659,third,odczuwałem/am troskę i współczucie.,0,fair
+659,fourth,odprężony/a?,0,unfair
+659,fourth,spokojny/a,0,unfair
+659,fourth,zestresowany/a,0,unfair
+659,fourth,akceptowany/a,0,unfair
+659,fourth,radosny/a?,0,unfair
+659,fourth,zaniepokojony/a,0,unfair
+659,fourth,związany/a z innymi?,0,unfair
+659,fourth,wykluczony/a,0,unfair
+659,fourth,samotny/a,0,unfair
+659,fourth,oceniająca,0,unfair
+659,fourth,przyjazna,0,unfair
+659,fourth,godna zaufania,0,unfair
+659,fourth,akceptująca,0,unfair
+659,fourth,nieszczera,0,unfair
+659,fourth,nieprzyjemna,0,unfair
+659,fourth,Nasz cele w tej sytuacji są sprzeczne.,0,unfair
+659,fourth,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",0,unfair
+659,fourth,Każda z osób mogła uzyskać pożądane cele.,0,unfair
+659,fourth,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",0,unfair
+659,fourth,Kto miał większą możliwość wpływania na na przebieg sytuacji?,0,unfair
+659,fourth,Kto miał najmniejszy wpływ na wynik tej sytuacji?,0,unfair
+659,fourth,odczuwałem/am dystans i chłód,0,unfair
+659,fourth,odczuwałem/am troskę i współczucie.,0,unfair
+659,fourth,skupiałem/am się na swojej perspektywie.,0,unfair
+659,fourth,przyjmowałem/am perspektywę drugiej osoby.,0,unfair
