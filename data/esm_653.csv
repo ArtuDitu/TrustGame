@@ -1,10 +1,109 @@
 participant,esm,question,answer,previous_condition
 653,before,radosny/a?,3,none
-653,before,zaniepokojony/a,3,none
 653,before,spokojny/a,3,none
+653,before,akceptowany/a,1,none
+653,before,zaniepokojony/a,5,none
+653,before,odprężony/a?,1,none
+653,before,zestresowany/a,2,none
 653,before,związany/a z innymi?,3,none
-653,before,zestresowany/a,3,none
-653,before,akceptowany/a,3,none
-653,before,odprężony/a?,3,none
-653,before,samotny/a,3,none
+653,before,samotny/a,2,none
 653,before,wykluczony/a,3,none
+653,first,zestresowany/a,3,fair
+653,first,spokojny/a,2,fair
+653,first,akceptowany/a,2,fair
+653,first,związany/a z innymi?,2,fair
+653,first,radosny/a?,2,fair
+653,first,odprężony/a?,2,fair
+653,first,zaniepokojony/a,2,fair
+653,first,wykluczony/a,2,fair
+653,first,samotny/a,2,fair
+653,first,nieprzyjemna,2,fair
+653,first,przyjazna,4,fair
+653,first,oceniająca,3,fair
+653,first,akceptująca,3,fair
+653,first,godna zaufania,3,fair
+653,first,nieszczera,3,fair
+653,first,Nasz cele w tej sytuacji są sprzeczne.,2,fair
+653,first,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",2,fair
+653,first,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",2,fair
+653,first,Każda z osób mogła uzyskać pożądane cele.,2,fair
+653,first,Kto miał większą możliwość wpływania na na przebieg sytuacji?,2,fair
+653,first,Kto miał najmniejszy wpływ na wynik tej sytuacji?,2,fair
+653,first,odczuwałem/am dystans i chłód,2,fair
+653,first,przyjmowałem/am perspektywę drugiej osoby.,3,fair
+653,first,skupiałem/am się na swojej perspektywie.,3,fair
+653,first,odczuwałem/am troskę i współczucie.,3,fair
+653,second,związany/a z innymi?,3,unfair
+653,second,zestresowany/a,3,unfair
+653,second,odprężony/a?,3,unfair
+653,second,radosny/a?,3,unfair
+653,second,akceptowany/a,3,unfair
+653,second,spokojny/a,3,unfair
+653,second,zaniepokojony/a,3,unfair
+653,second,samotny/a,3,unfair
+653,second,wykluczony/a,3,unfair
+653,second,nieszczera,3,unfair
+653,second,akceptująca,3,unfair
+653,second,godna zaufania,3,unfair
+653,second,nieprzyjemna,3,unfair
+653,second,oceniająca,3,unfair
+653,second,przyjazna,3,unfair
+653,second,Nasz cele w tej sytuacji są sprzeczne.,2,unfair
+653,second,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",2,unfair
+653,second,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",2,unfair
+653,second,Każda z osób mogła uzyskać pożądane cele.,2,unfair
+653,second,Kto miał większą możliwość wpływania na na przebieg sytuacji?,2,unfair
+653,second,Kto miał najmniejszy wpływ na wynik tej sytuacji?,2,unfair
+653,second,odczuwałem/am troskę i współczucie.,3,unfair
+653,second,skupiałem/am się na swojej perspektywie.,3,unfair
+653,second,przyjmowałem/am perspektywę drugiej osoby.,3,unfair
+653,second,odczuwałem/am dystans i chłód,3,unfair
+653,third,zaniepokojony/a,3,fair
+653,third,radosny/a?,3,fair
+653,third,akceptowany/a,3,fair
+653,third,zestresowany/a,3,fair
+653,third,spokojny/a,3,fair
+653,third,odprężony/a?,3,fair
+653,third,związany/a z innymi?,3,fair
+653,third,związany/a z innymi?,3,fair
+653,third,przyjazna,3,fair
+653,third,godna zaufania,3,fair
+653,third,nieprzyjemna,3,fair
+653,third,nieszczera,3,fair
+653,third,oceniająca,3,fair
+653,third,akceptująca,3,fair
+653,third,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",2,fair
+653,third,Każda z osób mogła uzyskać pożądane cele.,2,fair
+653,third,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",2,fair
+653,third,Nasz cele w tej sytuacji są sprzeczne.,2,fair
+653,third,Kto miał większą możliwość wpływania na na przebieg sytuacji?,2,fair
+653,third,Kto miał najmniejszy wpływ na wynik tej sytuacji?,2,fair
+653,third,odczuwałem/am troskę i współczucie.,3,fair
+653,third,odczuwałem/am dystans i chłód,3,fair
+653,third,skupiałem/am się na swojej perspektywie.,3,fair
+653,third,przyjmowałem/am perspektywę drugiej osoby.,3,fair
+653,fourth,związany/a z innymi?,3,unfair
+653,fourth,radosny/a?,3,unfair
+653,fourth,spokojny/a,3,unfair
+653,fourth,zaniepokojony/a,3,unfair
+653,fourth,zestresowany/a,3,unfair
+653,fourth,odprężony/a?,3,unfair
+653,fourth,akceptowany/a,3,unfair
+653,fourth,wykluczony/a,3,unfair
+653,fourth,samotny/a,3,unfair
+653,fourth,akceptująca,3,unfair
+653,fourth,nieprzyjemna,3,unfair
+653,fourth,godna zaufania,3,unfair
+653,fourth,nieszczera,3,unfair
+653,fourth,przyjazna,3,unfair
+653,fourth,oceniająca,3,unfair
+653,fourth,"Cokolwiek każde z nas zrobiło, w tej suytuacji, nie miałoby to wpływu na drugą osobę.",2,unfair
+653,fourth,Każda z osób mogła uzyskać pożądane cele.,2,unfair
+653,fourth,"To, co każde z nas zrobiło w tej sytuacji, wpływa na drugą osobę",2,unfair
+653,fourth,Nasz cele w tej sytuacji są sprzeczne.,2,unfair
+653,fourth,Kto miał większą możliwość wpływania na na przebieg sytuacji?,2,unfair
+653,fourth,Kto miał najmniejszy wpływ na wynik tej sytuacji?,2,unfair
+653,fourth,odczuwałem/am dystans i chłód,3,unfair
+653,fourth,przyjmowałem/am perspektywę drugiej osoby.,3,unfair
+653,fourth,odczuwałem/am troskę i współczucie.,3,unfair
+653,fourth,skupiałem/am się na swojej perspektywie.,3,unfair
