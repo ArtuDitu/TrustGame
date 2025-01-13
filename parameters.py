@@ -18,7 +18,7 @@ import os
 
 
 # Participant number stored in a variable
-participant_number = 656
+participant_number = 653
 # number of trials
 TG_trials = 5
 # start condition
@@ -72,16 +72,16 @@ key_mappings = {
 
 ### texts
 
-welcome_text = 'Witamy\n\n Wciśnij spacje by kontynuować'
+welcome_text = 'Witamy\n\n Wciśnij spację by kontynuować'
 end_text = 'To już koniec!\n\n Dziękujemy za udział w badaniu!'
 return_text_p = 'Twój powiernik zwrócił dla Ciebie:'
 
 ## instructions
-instructions1 = 'W tym badaniu będziesz wielokrotnie inwestował sumy pieniędzy z dwoma innymi partnerami (JACKIEM i MIRKIEM). \n Za każdym razem gdy powierzysz sume jednemu z powierników ta suma będzie potrojona\n\n Następnie dowiesz się ile ta inwestycja zarobiła oraz co najważniejsze ile twój powiernik (Jacek albo Mirek) zdecydowali się dla Ciebie zwrócić\n\nWciśnij spacje by kontynuować'
-instructions2 = 'By zdecydować ile chcesz zainwestować będziesz musiał podać liczbę pomiędzy 0 i 10 oraz wcisnąć ENTER by ją potwierdzić.\n\n Wciśnij spacje by spróbować'
-instructions3 = 'Teraz się dowiesz ile ta inwestycja zarobiła pieniędzy.\n\n Wciśnij spacje by kontynuować'
-instructions4 = 'Teraz się dowiesz ile twój powiernik zdecydował się tobie zwrócić.\n\n Wciśnij spacje by kontynuować'
-instructions5 = 'To już całe instrukcje. Pamiętaj, musisz podjąć decyzje ile chcesz zainwestować i po tym dowiesz się ile twój powiernik zdecydował Ci sie zwrócić.\n\n Jeśli zrozumiałeś całe instrukcje to wciśnij spacje by kontynować.\n\n Jeśli chciałbym zobaczyć instrukje jeszcze raz wciśnij ENTER'
+instructions1 = 'W tym badaniu będziesz wielokrotnie inwestował pewną część kwoty pieniędzy wraz z dwoma innymi osobami (JACKIEM i MIRKIEM). \n Za każdym razem, gdy powierzysz jakąś kwotę drugiej osobie, kwota ta zostanie potrojona\n\n Następnie dowiesz się jaką część tej kwoty, druga osoba zdecydowała się Ci zwrócić\n\nWciśnij spację by kontynuować'
+instructions2 = 'By zdecydować ile chcesz zainwestować będziesz musiał podać kwotę 0 i 10 oraz wcisnąć ENTER by ją potwierdzić.\n\n Wciśnij spację by spróbować'
+instructions3 = 'Teraz dowiesz się ile wynosi potrojona kwota \n\n Wciśnij spację by kontynuować'
+instructions4 = 'Teraz dowiesz się ile druga osoba zdecydowała się Ci zwrócić.\n\n Wciśnij spację by kontynuować'
+instructions5 = 'Pamiętaj, musisz podjąć decyzje ile chcesz zainwestować i po tym dowiesz się ile twój powiernik zdecydował Ci sie zwrócić.\n\n Jeśli jesteś gotów przejść do głównej części wciśnij spację.\n\n Jeśli chciałbyś zobaczyć instrukcje jeszcze raz wciśnij ENTER'
 
 # esm initial text
 esm_start_text = 'W tej części badania zostaną wyświetlone słowa, które opisują rożne uczucia i emocje.\n\nPrzy każdym z nich prosimy, nie zastanawiając się długo nad odpowiedzią, zaznaczyć na skali 1 (Zdecydowanie nie) do 7 (Zdecydowanie tak), czy czujesz się w określony sposób.\n\nWybierz odpowiedź (w góre wciśnij UP, w dół wciśnij DOWN) i potwierdź wciskając ENTER\n\n\nNaciśnij teraz spacje by kontynuować'
@@ -128,5 +128,5 @@ words_7 = ["Zdecydowanie nie", "Nie", "Raczej nie", "Ani tak, ani nie", "Raczej 
 words_5 = ["Zdecydowanie nie", "Raczej nie", "Ani tak, ani nie", "Raczej tak", "Zdecydowanie tak"]
 words_person = ["Zdecydowanie druga osoba", "Raczej druga osoba", "Ani druga osoba, ani ja", "Raczej ja", "Zdecydowanie ja"]
 
-text_block1and3 = 'W tej części będziesz inwestował z JACKIEM\n\n Naciśnij teraz spacje by kontynuować \n\n Inwestycje się rozpoczną gdy JACEK będzie gotowy'
-text_block2and4 = 'W tej części będziesz inwestował z MIRKIEM\n\n Naciśnij teraz spacje by kontynuować \n\n Inwestycje się rozpoczną gdy MIREK będzie gotowy'
+text_block1and3 = 'W tej części będziesz inwestował z JACKIEM\n\n Naciśnij teraz spację by kontynuować \n\n Inwestycje się rozpoczną gdy JACEK będzie gotowy'
+text_block2and4 = 'W tej części będziesz inwestował z MIRKIEM\n\n Naciśnij teraz spację by kontynuować \n\n Inwestycje się rozpoczną gdy MIREK będzie gotowy'

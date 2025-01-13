@@ -19,7 +19,7 @@ while not understood:
     display_text(win, instructions2)
     wait_for_spacebar()
     display_fixation_cross(win,iti,jitter)
-    investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIlę chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
+    investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIle chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
     investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
     investment_return = 3 * investment_p
     display_text(win, instructions3)
@@ -102,7 +102,7 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         jitter_iti = display_fixation_cross(win, iti, jitter)
-        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIlę chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
+        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIle chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
         investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
@@ -222,7 +222,7 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         jitter_iti = display_fixation_cross(win, iti, jitter)
-        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIlę chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
+        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIle chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
         investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
@@ -456,7 +456,7 @@ with open(tg_file_path, mode='a', newline='', encoding = 'utf-8') as file:
     for i in range(TG_trials):
         # Display the investment prompt
         jitter_iti = display_fixation_cross(win, iti, jitter)
-        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIlę chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
+        investment_text = f'Masz w tej chwili {max_investment_p:.1f}\n\n\nIle chciałabyś/byś zainwestować?\n\n\nWciśnij ENTER by potwierdzić'
         investment_p, rt = tg_invest(win, prompt_text=investment_text, min_investment=min_investment_p, max_investment=max_investment_p)
 
         # Calculate the return, clamping it to the specified range
